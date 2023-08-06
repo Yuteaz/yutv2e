@@ -1769,61 +1769,7 @@ function OrionLib:Destroy()
 end
 
 return OrionLib
-local local ScreenGui = Instance.new("ScreenGui")
-local ImageButton = Instance.new("ImageButton")
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-ImageButton.Parent = ScreenGui
-ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageButton.BorderSizePixel = 0
-ImageButton.Position = UDim2.new(0.11900685, 0, 0.163815185, 0)
-ImageButton.Size = UDim2.new(0, 51, 0, 50)
-ImageButton.Style = Enum.ButtonStyle.RobloxButton
-ImageButton.Image = "rbxassetid://12699767780"
-
-local dragging = false
-local offset = Vector2.new()
-
-local function moveButton()
-    game:GetService("UserInputService").InputChanged:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
-            ImageButton.Position = UDim2.new(0, input.Position.X - offset.X, 0, input.Position.Y - offset.Y)
-        end
-    end)
-end
-
-ImageButton.MouseButton1Down:Connect(function(input)
-    dragging = true
-    offset = Vector2.new(input.Position.X - ImageButton.Position.X.Offset, input.Position.Y - ImageButton.Position.Y.Offset)
-    moveButton()
-end)
-
-game:GetService("UserInputService").InputEnded:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        dragging = false
-    end
-end)
-
--- Sự kiện khi nút ImageButton được nhấn
-local count = 0
-ImageButton.MouseButton1Click:Connect(function()
-    count = count + 1
-    if count % 2 == 1 then
-        print("test")
-    else
-        print("test2")
-    end
-end)
-local function toggleMainWindow()
-    if Mainwindow.Visible then
-        Mainwindow.Visible = false
-    else
-        Mainwindow.Visible = true
-    end
-end
 ImageButton.MouseButton1Click:Connect(function()
     toggleMainWindow()
 end)
