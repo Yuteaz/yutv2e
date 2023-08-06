@@ -683,12 +683,7 @@ function OrionLib:MakeWindow(WindowConfig)
 		end
 		Minimized = not Minimized    
 	end)
-local function Uishowgf 
-MainWindow.Visible = true
-end
-local function Uihidegf 
-MainWindow.Visible = false
-end
+
 	local function LoadSequence()
 		MainWindow.Visible = false
 		local LoadSequenceLogo = SetProps(MakeElement("Image", WindowConfig.IntroIcon), {
