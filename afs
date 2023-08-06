@@ -663,10 +663,10 @@ function OrionLib:MakeWindow(WindowConfig)
 			MainWindow.Visible = true
 		end
 	end)
-local function Uishowgf 
+local function Uishowgf()
 MainWindow.Visible = true
 end
-local function Uihidegf 
+local function Uihidegf()
 MainWindow.Visible = false
 end
 	AddConnection(MinimizeBtn.MouseButton1Up, function()
