@@ -1769,7 +1769,3 @@ function OrionLib:Destroy()
 end
 
 return OrionLib
-
-ImageButton.MouseButton1Click:Connect(function()
-    toggleMainWindow()
-end)
