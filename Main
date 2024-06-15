@@ -1,0 +1,11 @@
+repeat wait() until game:IsLoaded()
+local Games = {
+    ["afss"] = 6299805723,15278073804,
+    ["ACS"] = 14433762945
+}
+for i,v in pairs(Games) do
+    if  v == game.PlaceId then
+        loadstring(game:HttpGet(("https://raw.githubusercontent.com/Binintrozza/yutv2e/main/"..tostring(i))))()
+        break
+    end
+end
